@@ -1,0 +1,61 @@
+name: "Dispatch"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        type: choice
+        description: "Version to publish: v[MAJOR].[MINOR].[PATCH]-[PRE-RELEASE].X"
+        required: true
+        options:
+          - pre-release
+          - patch
+          - minor
+          - major
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  GITHUB_EMAIL: ${{ secrets.GH_EMAIL }}
+  DOCKER_USER: ${{ secrets.DOCKER_USER }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "⚙ Set up Node.js"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: "✅ Checkout repository"
+        uses: actions/checkout@v2
+
+  release:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: "💾 Restore Dependencies from cache"
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: "Return info"
+        run: |
+          echo "GH:"
+          echo ${{ fromJson(github) }}
+          echo "GH REPO:"
+          echo ${{ fromJson(github.repository) }}
+          echo "EVENT:"
+          echo ${{ fromJson(github.event) }}
+          echo "E REPOSITORY:"
+          echo ${{ fromJson(github.event.repository) }}
+          echo "E OWNER:"
+          echo ${{ fromJson(github.event.repository.owner) }}
