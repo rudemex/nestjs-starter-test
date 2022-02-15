@@ -42,12 +42,5 @@ jobs:
       - name: "Return info"
         run: |
           echo GH: 
-          echo ${{ fromJson(github) }}
-          echo GH REPO: 
-          echo ${{ fromJson(github.repository) }}
-          echo EVENT: 
-          echo ${{ fromJson(github.event) }}
-          echo E REPOSITORY: 
-          echo ${{ fromJson(github.event.repository) }}
-          echo E OWNER: 
-          echo ${{ fromJson(github.event.repository.owner) }}
+          echo fromJson(${{ github }})
+          
