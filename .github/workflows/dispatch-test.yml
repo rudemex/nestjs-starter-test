@@ -39,18 +39,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "💾 Restore Dependencies from cache"
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
       - name: "Return info"
         run: |
-          echo "GH: ${{ fromJson(github) }}"
-          echo "GH REPO: ${{ fromJson(github.repository) }}"
-          echo "EVENT: ${{ fromJson(github.event) }}"
-          echo "E REPOSITORY: ${{ fromJson(github.event.repository) }}"
-          echo "E OWNER: ${{ fromJson(github.event.repository.owner) }}"
+          echo GH: 
+          echo ${{ fromJson(github) }}
+          echo GH REPO: 
+          echo ${{ fromJson(github.repository) }}
+          echo EVENT: 
+          echo ${{ fromJson(github.event) }}
+          echo E REPOSITORY: 
+          echo ${{ fromJson(github.event.repository) }}
+          echo E OWNER: 
+          echo ${{ fromJson(github.event.repository.owner) }}
