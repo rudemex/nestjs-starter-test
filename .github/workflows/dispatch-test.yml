@@ -18,8 +18,8 @@ env:
   GITHUB_EMAIL: ${{ secrets.GH_EMAIL }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GH_ORGA: ${{ toJson(github.repository_owner) }}
-  GH_REPO_NAME: ${{ toJson(github.event.repository.name) }}
+  GH_ORGA: ${{ github.repository_owner }}
+  GH_REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
   setup:
