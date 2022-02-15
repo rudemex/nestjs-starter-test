@@ -43,6 +43,8 @@ jobs:
         run: |
           echo GH: 
           echo ${{ toJson(github) }}
+          echo GH REPO OWNER
+          echo ${{ toJson(github.repository_owner) }}
           echo GH REPO: 
           echo ${{ toJson(github.repository) }}
           echo EVENT: 
