@@ -18,6 +18,8 @@ env:
   GITHUB_EMAIL: ${{ secrets.GH_EMAIL }}
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  GH_ORGA: ${{ github.repository_owner }}
+  GH_REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
   setup:
@@ -41,15 +43,18 @@ jobs:
 
       - name: "Return info"
         run: |
-          echo GH: 
-          echo ${{ toJson(github) }}
-          echo GH REPO OWNER
-          echo ${{ toJson(github.repository_owner) }}
-          echo GH REPO: 
-          echo ${{ toJson(github.repository) }}
-          echo EVENT: 
-          echo ${{ toJson(github.event) }}
-          echo E REPOSITORY: 
-          echo ${{ toJson(github.event.repository) }}
-          echo E OWNER: 
-          echo ${{ toJson(github.event.repository.owner) }}
+          echo ORGA: ${GH_ORGA}
+          echo REPO NAME: ${GH_REPO_NAME}
+        #run: |
+        #  echo GH:
+        #  echo ${{ toJson(github) }}
+        #  echo GH REPO OWNER
+        #  echo ${{ toJson(github.repository_owner) }}
+        #  echo GH REPO:
+        #  echo ${{ toJson(github.repository) }}
+        #  echo EVENT:
+        #  echo ${{ toJson(github.event) }}
+        #  echo E REPOSITORY:
+        #  echo ${{ toJson(github.event.repository) }}
+        #  echo E OWNER:
+        #  echo ${{ toJson(github.event.repository.owner) }}
