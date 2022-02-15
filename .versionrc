@@ -15,19 +15,13 @@
     {"type": "ci", "hidden": true},
     {"type": "revert", "hidden": true}
   ],
-  "commitUrlFormat": "https://github.com/rudemex/nestjs-starter/commit/{{hash}}",
-  "compareUrlFormat": "https://github.com/rudemex/nestjs-starter/compare/{{previousTag}}...{{currentTag}}",
+  "commitUrlFormat": "https://github.com/rudemex/nestjs-starter-test/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/rudemex/nestjs-starter-test/compare/{{previousTag}}...{{currentTag}}",
   "issuePrefixes": ["#"],
-  "issueUrlFormat": "https://github.com/rudemex/nestjs-starter/issues/{{id}}",
+  "issueUrlFormat": "https://github.com/rudemex/nestjs-starter-test/issues/{{id}}",
   "skip": {
     "bump": false,
     "commit": false,
     "tag": false
-  },
-  "bumpFiles":[
-    {
-      "filename": "VERSION_TRACKER.txt",
-      "type": "plain-text"
-    }
-  ]
+  }
 }
