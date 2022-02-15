@@ -2,6 +2,14 @@
 
 ---
 
+### [0.0.2](https://github.com/rudemex/nestjs-starter-test/compare/v0.0.1...v0.0.2) (2022-02-15)
+
+
+### 👨‍💻 Chores
+
+* edit docker step in release workflow ([704f7f8](https://github.com/rudemex/nestjs-starter-test/commit/704f7f8678bdee2229c1a9a9a8e07b02f0d69842))
+* remove deploy to heroky ([1f036d5](https://github.com/rudemex/nestjs-starter-test/commit/1f036d5ecbcec20d6f1fb3e4327e17f15d1367f8))
+
 ### [0.0.1](https://github.com/rudemex/nestjs-starter-test/compare/v0.0.1-alpha.0...v0.0.1) (2022-02-15)
 
 
