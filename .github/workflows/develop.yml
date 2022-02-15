@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ develop ]
 
+env:
+  GH_ORGA: ${{ github.repository_owner }}
+  GH_REPO_NAME: ${GH_REPO_NAME}
+
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -57,9 +61,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.organization=${{ github.event.repository.owner.name }}
-            -Dsonar.projectKey=${{ github.event.repository.owner.name }}_${{ github.event.repository.name }}
-            -Dsonar.projectName=${{ github.event.repository.owner.name }}_${{ github.event.repository.name }}
+            -Dsonar.organization=${GH_ORGA}
+            -Dsonar.projectKey=${GH_ORGA}_${GH_REPO_NAME}
+            -Dsonar.projectName=${GH_ORGA}_${GH_REPO_NAME}
             -Dsonar.projectVersion=1.0
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.sources=./src
