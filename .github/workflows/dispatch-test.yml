@@ -43,8 +43,8 @@ jobs:
 
       - name: "Return info"
         run: |
-          echo ORGA: ${GH_ORGA}
-          echo REPO NAME: ${GH_REPO_NAME}
+          echo ORGA: "${GH_ORGA}"
+          echo REPO NAME: "${GH_REPO_NAME}"
         #run: |
         #  echo GH:
         #  echo ${{ toJson(github) }}
