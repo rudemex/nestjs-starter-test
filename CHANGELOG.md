@@ -2,6 +2,13 @@
 
 ---
 
+### [0.0.1](https://github.com/rudemex/nestjs-starter-test/compare/v0.0.1-alpha.0...v0.0.1) (2022-02-15)
+
+
+### 👨‍💻 Chores
+
+* add heroku ([f8e5a9a](https://github.com/rudemex/nestjs-starter-test/commit/f8e5a9a5445e136c3da0a36a49c6d140739a3201))
+
 ### 0.0.1-alpha.0 (2022-02-15)
 
 
